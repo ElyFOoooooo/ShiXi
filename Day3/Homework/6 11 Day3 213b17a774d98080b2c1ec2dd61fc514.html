@@ -1,0 +1,839 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>6.11 Day3</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="213b17a7-74d9-8080-b2c1-ec2dd61fc514" class="page sans"><header><h1 class="page-title">6.11 Day3</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(71, 70, 68, 0.6);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Created</th><td><time>@2025年6月15日 10:15</time></td></tr></tbody></table></header><div class="page-body"><h1 id="213b17a7-74d9-80f4-8c7d-e21329099b28" class="">深度学习</h1><h3 id="213b17a7-74d9-8033-a2ee-d4c21ee5f520" class="">激活函数</h3><p id="213b17a7-74d9-8096-adef-d21c3368fe47" class="">常见激活函数的优缺点</p><hr id="213b17a7-74d9-8064-b99f-c77903d12ae7"/><h3 id="213b17a7-74d9-8032-b034-dae06bcca4d8" class="">1. <strong>Sigmoid</strong></h3><p id="213b17a7-74d9-80a1-bbf5-cb65ecdd82c1" class=""><strong>优点：</strong></p><p id="213b17a7-74d9-8018-9572-c04198453106" class="">① 输出值在 (0,1)，具有概率意义，适合二分类输出层</p><p id="213b17a7-74d9-800c-95dc-c212658f1042" class="">② 函数平滑可微，便于梯度计算</p><p id="213b17a7-74d9-8032-a836-c1fdec8a41a8" class=""><strong>缺点：</strong></p><p id="213b17a7-74d9-8028-a682-ed221d56d79e" class="">① 梯度消失严重（饱和区梯度趋近于0）</p><p id="213b17a7-74d9-80a2-aa33-e0046d032d50" class="">② 输出非零中心化，降低训练效率</p><p id="213b17a7-74d9-8033-9076-cbdfeea01d46" class="">③ 指数计算开销较大</p><hr id="213b17a7-74d9-80da-a6e7-fdd72da8b0d8"/><h3 id="213b17a7-74d9-80a5-a127-e2d7293ba8a2" class="">2. <strong>Tanh</strong></h3><p id="213b17a7-74d9-8061-ad7d-cc5009efcad1" class=""><strong>优点：</strong></p><p id="213b17a7-74d9-80bd-b5cb-eebbe3de47a0" class="">① 输出零中心化 (-1,1)，收敛快于 Sigmoid</p><p id="213b17a7-74d9-80ed-bc2f-e0a4a41cc8e2" class="">② 平滑可微，适合 RNN/LSTM 隐藏层</p><p id="213b17a7-74d9-80f9-93d3-d51e746d5d31" class=""><strong>缺点：</strong></p><p id="213b17a7-74d9-8090-9e46-ebe7c9c00f0d" class="">① 梯度消失问题依然存在</p><p id="213b17a7-74d9-8005-b4a4-e163c844ffdd" class="">② 指数计算开销大</p><hr id="213b17a7-74d9-8095-b907-dc5319507e5d"/><h3 id="213b17a7-74d9-807d-87fa-e8089cf497d6" class="">3. <strong>ReLU</strong></h3><p id="213b17a7-74d9-80e0-b646-cc483c7bcc19" class=""><strong>优点：</strong></p><p id="213b17a7-74d9-806d-8ce0-f3cb09be831b" class="">① 计算极快（无指数运算）</p><p id="213b17a7-74d9-801e-8ac9-d6359a0d7314" class="">② 正区间梯度恒为1，缓解梯度消失</p><p id="213b17a7-74d9-8018-8ed5-e03c96377459" class="">③ 稀疏激活性提升模型效率</p><p id="213b17a7-74d9-807c-a2ca-f99b0bd4a2db" class=""><strong>缺点：</strong></p><p id="213b17a7-74d9-80dc-864c-fed3c2141128" class="">① 死亡 ReLU 问题（负输入导致永久失活）</p><p id="213b17a7-74d9-80ee-920e-dad1d0e000ed" class="">② 输出非零中心化</p><hr id="213b17a7-74d9-801c-b769-ee7b8c17d914"/><h3 id="213b17a7-74d9-80fb-ba9b-d001f0bf9a00" class="">4. <strong>Leaky ReLU</strong></h3><p id="213b17a7-74d9-808f-890a-c1c1ea0ccc7d" class=""><strong>优点：</strong></p><p id="213b17a7-74d9-80a5-8ad6-c7d6d679fdc7" class="">① 保留 ReLU 计算高效性</p><p id="213b17a7-74d9-8058-919a-e124604c997c" class="">② 负区间梯度为 α，解决死亡 ReLU 问题</p><p id="213b17a7-74d9-8009-836a-fe240937604b" class=""><strong>缺点：</strong></p><p id="213b17a7-74d9-8036-ae7a-e7c3722051e1" class="">① 需手动设置超参数 α（通常 0.01）</p><p id="213b17a7-74d9-803c-acb9-d87496899d18" class="">② 输出非零中心化</p><hr id="213b17a7-74d9-803c-bd24-ff10b6946759"/><h3 id="213b17a7-74d9-80fc-9ff7-cab456ce5d7b" class="">5. <strong>ELU</strong></h3><p id="213b17a7-74d9-8045-9250-c94a3fabbec5" class=""><strong>优点：</strong></p><p id="213b17a7-74d9-80f8-b997-f2bb73ff22ed" class="">① 负区间平滑输出，接近零中心化</p><p id="213b17a7-74d9-80f8-9b07-ed584cf42701" class="">② 缓解死亡 ReLU 问题</p><p id="213b17a7-74d9-8002-9c2e-f49af4d70586" class="">③ 对噪声更鲁棒</p><p id="213b17a7-74d9-806e-8cb8-c2526aa7c83b" class=""><strong>缺点：</strong></p><p id="213b17a7-74d9-8072-959b-d889432cafca" class="">① 负区间含指数运算，计算开销大</p><p id="213b17a7-74d9-802f-9cbc-c87dc694c3d1" class="">② 需选择参数 α（通常设为 1）</p><hr id="213b17a7-74d9-809d-a2c2-e250b3fbad6a"/><h3 id="213b17a7-74d9-805c-955f-f2e169f720dd" class="">6. <strong>Softmax</strong></h3><p id="213b17a7-74d9-80c8-ba88-c2ca72594c54" class=""><strong>优点：</strong></p><p id="213b17a7-74d9-8012-8473-d9e9fc0498e7" class="">① 输出为概率分布（多分类唯一选择）</p><p id="213b17a7-74d9-805d-9001-d1770c29defd" class="">② 概率解释清晰直观</p><p id="213b17a7-74d9-8090-8e9c-c6f0e4001810" class=""><strong>缺点：</strong></p><p id="213b17a7-74d9-8040-a4cd-f0c72a7b40d2" class="">① 仅适用于输出层</p><p id="213b17a7-74d9-80f6-a7c6-f8163ce7906b" class="">② 指数计算开销大</p><p id="213b17a7-74d9-802c-b577-ed1caddbc164" class="">③ 需数值稳定处理防溢出</p><hr id="213b17a7-74d9-800c-ad18-f100c0001073"/><h3 id="213b17a7-74d9-80be-90a1-e450c0af2205" class="">7. <strong>Swish</strong></h3><p id="213b17a7-74d9-8084-ade3-f883c8264597" class=""><strong>优点：</strong></p><p id="213b17a7-74d9-8093-ad62-c84a02bd1a0c" class="">① 实验性能常优于 ReLU（谷歌验证）</p><p id="213b17a7-74d9-80db-abd8-e6857f13d5af" class="">② 平滑非单调性增强表达能力</p><p id="213b17a7-74d9-809e-83e6-ca387c9921fa" class="">③ 缓解梯度消失</p><p id="213b17a7-74d9-80f5-a4a7-c06317077220" class=""><strong>缺点：</strong></p><p id="213b17a7-74d9-8084-a16d-d3b8604e0499" class="">① 含 Sigmoid 计算，速度慢于 ReLU</p><p id="213b17a7-74d9-8045-942c-fac469c9c3cd" class="">② 较新，实践验证少于经典函数</p><hr id="213b17a7-74d9-8097-9294-ffda4ed016b8"/><h3 id="213b17a7-74d9-8088-be2d-cc25406f60c1" class="">激活函数</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="213b17a7-74d9-805e-bc79-c72528fedb9a" class="code"><code class="language-JavaScript">import torch
+import torchvision
+from torch.utils.data import DataLoader
+from torch.utils.tensorboard import SummaryWriter
+
+# 导入数据集
+dataset = torchvision.datasets.CIFAR10(root=&quot;dataset_chen&quot;,
+                                       train=False,
+                                       transform=torchvision.transforms.ToTensor())
+dataloader = DataLoader(dataset=dataset,
+                        batch_size=64)
+
+# 设置input
+input = torch.tensor([[1, -0.5],
+                      [-1, 3]])
+input = torch.reshape(input, (-1, 1, 2, 2))
+print(input.shape)
+
+
+# 非线性激活网络
+class Chen(torch.nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.relu = torch.nn.ReLU()
+        self.sigmoid = torch.nn.Sigmoid()
+
+    def forward(self, input):
+        output = self.sigmoid(input)
+        return output
+
+
+chen = Chen()
+
+writer = SummaryWriter(&quot;sigmod_logs&quot;)
+step = 0
+for data in dataloader:
+    imgs, targets = data
+    writer.add_images(&quot;input&quot;, imgs, global_step=step)
+    output_sigmod = chen(imgs)
+    writer.add_images(&quot;output&quot;, output_sigmod, global_step=step)
+    step += 1
+writer.close()
+
+output = chen(input)
+print(output)
+</code></pre><figure id="213b17a7-74d9-802e-a560-faa7bf91469d" class="image"><a href="image.png"><img style="width:709.96875px" src="image.png"/></a></figure><p id="213b17a7-74d9-80f3-a812-ebdab130d3b8" class="">
+</p><p id="213b17a7-74d9-80c9-9298-dcb90e9e606e" class="">训练网络模型</p><figure id="213b17a7-74d9-80e9-8ee0-f3fa352a168b" class="image"><a href="image%201.png"><img style="width:396.984375px" src="image%201.png"/></a></figure><figure id="213b17a7-74d9-80a6-b002-cdc3c91270d3" class="image"><a href="image%202.png"><img style="width:396.984375px" src="image%202.png"/></a></figure><p id="213b17a7-74d9-801d-8fcd-e2df672a0fbd" class="">
+</p><h1 id="213b17a7-74d9-80ab-94cd-dd252ea3529e" class="">训练自己的数据集</h1><p id="213b17a7-74d9-8028-8c27-cc5626379273" class="">1 数据集预处理，新建工程项目</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="213b17a7-74d9-8072-98cc-d65ec15e3c0e" class="code"><code class="language-JavaScript">import os
+import shutil
+from sklearn.model_selection import train_test_split
+import random
+
+# 设置随机种子以确保可重复性
+random.seed(42)
+
+# 数据集路径
+dataset_dir = r&#x27;D:\桌面\shixun\dataset\Images&#x27;  # 替换为你的数据集路径
+train_dir = r&#x27;D:\桌面\shixun\dataset\image2\train&#x27;  # 训练集输出路径
+val_dir = r&#x27;D:\桌面\shixun\dataset\image2\val&#x27;  # 验证集输出路径
+
+# 划分比例
+train_ratio = 0.7
+
+# 创建训练集和验证集目录
+os.makedirs(train_dir, exist_ok=True)
+os.makedirs(val_dir, exist_ok=True)
+
+# 遍历每个类别文件夹
+for class_name in os.listdir(dataset_dir):
+    if class_name not in [&quot;train&quot;,&quot;val&quot;]:
+        class_path = os.path.join(dataset_dir, class_name)
+
+
+        # 获取该类别下的所有图片
+        images = [f for f in os.listdir(class_path) if f.endswith((&#x27;.jpg&#x27;, &#x27;.jpeg&#x27;, &#x27;.png&#x27;))]
+        # 确保图片路径包含类别文件夹
+        images = [os.path.join(class_name, img) for img in images]
+
+        # 划分训练集和验证集
+        train_images, val_images = train_test_split(images, train_size=train_ratio, random_state=42)
+
+        # 创建类别子文件夹
+        os.makedirs(os.path.join(train_dir, class_name), exist_ok=True)
+        os.makedirs(os.path.join(val_dir, class_name), exist_ok=True)
+
+        # 复制训练集图片
+        for img in train_images:
+            src = os.path.join(dataset_dir, img)
+            dst = os.path.join(train_dir, img)
+            shutil.move(src, dst)
+
+        # 复制验证集图片
+        for img in val_images:
+            src = os.path.join(dataset_dir, img)
+            dst = os.path.join(val_dir, img)
+            shutil.move(src, dst)
+
+        shutil.rmtree(class_path)</code></pre><figure id="213b17a7-74d9-80b3-9786-fb8e5e9ac301" class="image"><a href="image%203.png"><img style="width:333.9375px" src="image%203.png"/></a></figure><p id="213b17a7-74d9-8055-8ede-ef593cd006ac" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="213b17a7-74d9-80ca-a550-f217d78715b5" class="code"><code class="language-JavaScript">### prepare.py
+
+import os
+
+# 创建保存路径的函数
+def create_txt_file(root_dir, txt_filename):
+    # 打开并写入文件
+    with open(txt_filename, &#x27;w&#x27;) as f:
+        # 遍历每个类别文件夹
+        for label, category in enumerate(os.listdir(root_dir)):
+            category_path = os.path.join(root_dir, category)
+            if os.path.isdir(category_path):
+                # 遍历该类别文件夹中的所有图片
+                for img_name in os.listdir(category_path):
+                    img_path = os.path.join(category_path, img_name)
+                    f.write(f&quot;{img_path} {label}\n&quot;)
+
+create_txt_file(r&#x27;D:\Desktop\tcl\dataset\image2\train&#x27;, &#x27;train.txt&#x27;)
+create_txt_file(r&#x27;D:\Desktop\tcl\dataset\image2\val&#x27;, &quot;val.txt&quot;)</code></pre><figure id="213b17a7-74d9-807e-ae51-cb554d79e246" class="image"><a href="image%204.png"><img style="width:333.984375px" src="image%204.png"/></a></figure><p id="213b17a7-74d9-80d8-8611-e2adf85970f2" class="">最后得到train.txt和val.txt</p><figure id="213b17a7-74d9-807f-9891-cbac2a23510f" class="image"><a href="image%205.png"><img style="width:234px" src="image%205.png"/></a></figure><p id="213b17a7-74d9-80e2-8ea2-fc0bb546162c" class="">
+</p><h2 id="213b17a7-74d9-8092-a4e9-f497f7d6bacf" class="">加载数据集</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="213b17a7-74d9-8029-a2f9-db4c09a964fd" class="code"><code class="language-JavaScript">import os
+from torch.utils import data
+from PIL import Image
+
+class ImageTxtDataset(data.Dataset):
+    def __init__(self, txt_path: str, folder_name, transform):
+        self.transform = transform
+        self.data_dir = os.path.dirname(txt_path)
+        self.imgs_path = []
+        self.labels = []
+        self.folder_name = folder_name
+        with open(txt_path, &#x27;r&#x27;) as f:
+            lines = f.readlines()
+        for line in lines:
+            img_path, label = line.split()
+            label = int(label.strip())
+            # img_path = os.path.join(self.data_dir, self.folder_name, img_path)
+            self.labels.append(label)
+            self.imgs_path.append(img_path)
+
+    def __len__(self):
+        return len(self.imgs_path)
+
+    def __getitem__(self, i):
+        path, label = self.imgs_path[i], self.labels[i]
+        image = Image.open(path).convert(&quot;RGB&quot;)
+        if self.transform is not None:
+            image = self.transform(image)
+        return image, label</code></pre><figure id="213b17a7-74d9-8027-96c2-d3239c96144c" class="image"><a href="image%206.png"><img style="width:334px" src="image%206.png"/></a></figure><p id="213b17a7-74d9-809c-be81-ed2fff51b155" class="">
+</p><p id="213b17a7-74d9-80bf-bcfc-e798e56d0ab3" class="">修改路径，数据增强</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="213b17a7-74d9-8002-91f5-e2237d77307f" class="code"><code class="language-JavaScript">train_data = ImageTxtDataset(r&quot;D:\桌面\shixun\dataset\train.txt&quot;,
+                             r&quot;D:\桌面\shixun\dataset\image2\train&quot;,
+                             #数据增强
+                             transforms.Compose([transforms.Resize(256),
+                                                 transforms.RandomHorizontalFlip(),
+                                                 transforms.ToTensor(),
+                                                 transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                                                                      std=[0.229, 0.224, 0.225])
+                                                 ])
+                             )</code></pre><figure id="213b17a7-74d9-8036-9a59-c722e59924ba" class="image"><a href="image%207.png"><img style="width:334px" src="image%207.png"/></a></figure><figure id="213b17a7-74d9-80b5-a616-d896b282534a" class="image"><a href="image%208.png"><img style="width:397px" src="image%208.png"/></a></figure><p id="213b17a7-74d9-8020-99c2-ddcb2297b9cd" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
